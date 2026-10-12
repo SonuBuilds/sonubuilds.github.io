@@ -2,6 +2,7 @@
 
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { profile } from "@/data/portfolio";
 
 export function HeroProfile() {
@@ -106,9 +107,12 @@ export function HeroProfile() {
         className="relative z-10 w-full max-w-[280px] md:max-w-[400px] lg:max-w-[480px] h-full flex items-end justify-center pointer-events-none"
       >
         <div className="relative w-full h-full transition-transform duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.02]">
-          <img 
+          <Image 
             src="/sonu-profile.webp"
             alt={profile.name}
+            width={480}
+            height={560}
+            priority
             className="w-full h-full object-contain object-bottom"
             style={{
               filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.5)) drop-shadow(0 0 25px rgba(0,245,212,0.25))",

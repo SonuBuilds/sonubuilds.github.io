@@ -3,7 +3,8 @@ import { notFound } from "next/navigation";
 import { CaseStudyHero } from "@/components/case-study/CaseStudyHero";
 import { ArrowLink } from "@/components/ui/ArrowLink";
 import { Tag } from "@/components/ui/Tag";
-import Footer from "@/components/Footer";
+import Image from "next/image";
+import { Footer } from "@/components/conversion/Footer";
 
 export async function generateStaticParams() {
   return projects.map((project) => ({
@@ -51,9 +52,11 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 <section className="py-8">
                   <div className="bg-background-secondary rounded-2xl md:rounded-[2rem] p-4 md:p-8 border border-border-subtle flex items-center justify-center overflow-hidden">
                     <div className="relative w-full rounded-xl border border-border-subtle shadow-2xl overflow-hidden">
-                      <img 
+                      <Image 
                         src={project.images.desktop} 
                         alt={`${project.title} desktop view`} 
+                        width={1440}
+                        height={900}
                         className="w-full h-auto object-cover object-top" 
                       />
                     </div>
