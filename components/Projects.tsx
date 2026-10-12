@@ -130,7 +130,7 @@ export default function Projects() {
                   {/* Visual Frame */}
                   <div className="relative border-b border-border-subtle bg-background-primary/30 overflow-hidden pt-8 px-6 sm:pt-12 sm:px-12 md:pt-16 md:px-16 pb-0 flex justify-center items-end h-[280px] sm:h-[400px] md:h-[500px]">
                      {project.images?.desktop ? (
-                        <div className="relative w-full max-w-4xl rounded-t-xl border border-border-subtle border-b-0 shadow-2xl overflow-hidden group-hover:-translate-y-2 transition-transform duration-700 ease-out z-10 flex flex-col h-full bg-background-secondary">
+                        <div className="group/desktop relative w-full max-w-4xl rounded-t-xl border border-border-subtle border-b-0 shadow-2xl overflow-hidden group-hover:-translate-y-2 transition-transform duration-700 ease-out z-10 flex flex-col h-full bg-background-secondary cursor-pointer">
                             {/* Browser Top Bar */}
                             <div className="flex items-center gap-1.5 px-3 py-2 bg-background-secondary/80 border-b border-border-subtle shrink-0">
                                 <span className="h-2 w-2 rounded-full bg-red-500/80" />
@@ -139,10 +139,13 @@ export default function Projects() {
                                 <span className="ml-2 font-mono text-[9px] text-foreground-muted truncate flex-1 opacity-70">
                                    {project.url ? project.url.replace(/^https?:\/\//, "").replace(/\/$/, "") : "enterprise-system"}
                                 </span>
+                                <span className="text-[9px] font-mono text-cyan-400 opacity-0 group-hover/desktop:opacity-100 transition-opacity flex items-center gap-0.5">
+                                   <span>Hover to scroll</span> ↓
+                                </span>
                             </div>
-                            {/* Desktop Image with Scroll effect on hover */}
+                            {/* Desktop Image with Scroll effect only on direct hover */}
                             <div className="relative w-full flex-1 overflow-hidden">
-                                <div className="absolute inset-0 w-full h-[300%] transition-transform duration-[8s] ease-linear group-hover:-translate-y-[66%]">
+                                <div className="absolute inset-0 w-full h-[300%] transition-transform duration-1000 ease-out group-hover/desktop:duration-[18s] group-hover/desktop:ease-linear group-hover/desktop:-translate-y-[66%]">
                                     <Image src={project.images.desktop} alt={`${project.title} Desktop`} fill className="object-top object-cover" sizes="(max-width: 768px) 100vw, 1024px" />
                                 </div>
                             </div>
@@ -154,10 +157,10 @@ export default function Projects() {
                         </div>
                      )}
 
-                     {/* Mobile Mockup Overlay */}
+                     {/* Mobile Mockup Overlay with Scroll effect only on direct hover */}
                      {project.images?.mobile && (
-                        <div className="absolute right-[5%] sm:right-[10%] bottom-[-20px] w-[90px] sm:w-[130px] md:w-[160px] h-[195px] sm:h-[280px] md:h-[340px] rounded-[1.2rem] sm:rounded-[2rem] border-[4px] sm:border-[6px] border-border-subtle bg-black shadow-2xl overflow-hidden transform group-hover:-translate-y-4 group-hover:-rotate-2 transition-all duration-700 ease-out z-20 hidden xs:block">
-                            <div className="absolute inset-0 w-full h-[400%] transition-transform duration-[10s] ease-linear group-hover:-translate-y-[75%]">
+                        <div className="group/mobile absolute right-[5%] sm:right-[10%] bottom-[-20px] w-[90px] sm:w-[130px] md:w-[160px] h-[195px] sm:h-[280px] md:h-[340px] rounded-[1.2rem] sm:rounded-[2rem] border-[4px] sm:border-[6px] border-border-subtle bg-black shadow-2xl overflow-hidden transform group-hover:-translate-y-4 group-hover:-rotate-2 transition-all duration-700 ease-out z-20 hidden xs:block cursor-pointer">
+                            <div className="absolute inset-0 w-full h-[400%] transition-transform duration-1000 ease-out group-hover/mobile:duration-[20s] group-hover/mobile:ease-linear group-hover/mobile:-translate-y-[75%]">
                                 <Image src={project.images.mobile} alt={`${project.title} Mobile`} fill className="object-top object-cover" sizes="(max-width: 768px) 160px, 160px" />
                             </div>
                         </div>
@@ -285,15 +288,19 @@ export default function Projects() {
                   />
 
                   {/* Thumbnail */}
-                  <div className="relative h-48 w-full border-b border-border-subtle bg-black overflow-hidden z-10">
+                  <div className="group/thumb relative h-48 w-full border-b border-border-subtle bg-black overflow-hidden z-10 cursor-pointer">
                      {project.images?.desktop ? (
-                         <Image src={project.images.desktop} alt={project.title} fill className="object-cover object-top opacity-80 group-hover:opacity-100 transition duration-500 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
+                         <div className="relative w-full h-full overflow-hidden">
+                           <div className="absolute inset-0 w-full h-[260%] transition-transform duration-1000 ease-out group-hover/thumb:duration-[16s] group-hover/thumb:ease-linear group-hover/thumb:-translate-y-[61%]">
+                             <Image src={project.images.desktop} alt={project.title} fill className="object-cover object-top opacity-85 group-hover/thumb:opacity-100" sizes="(max-width: 768px) 100vw, 33vw" />
+                           </div>
+                         </div>
                      ) : (
                          <div className="w-full h-full flex items-center justify-center text-zinc-700">
                             <Layers size={32} />
                          </div>
                      )}
-                     <div className="absolute top-3 right-3 z-20">
+                     <div className="absolute top-3 right-3 z-20 pointer-events-none">
                          {project.logo && (
                              <div className="w-8 h-8 rounded bg-black/60 backdrop-blur-sm border border-border-subtle p-1">
                                 <Image src={project.logo} alt={project.title} width={32} height={32} className="object-contain" />

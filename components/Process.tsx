@@ -13,7 +13,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="section-pad border-y border-border-subtle bg-[#070707]">
+    <section id="process" className="section-pad border-y border-border-subtle bg-[#050505]">
       <div className="container-x">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -21,7 +21,7 @@ export default function Process() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
         >
-          <p className="mb-2 sm:mb-3 text-xs uppercase tracking-[.24em] text-violet-300 font-semibold">
+          <p className="mb-2 sm:mb-3 text-xs uppercase tracking-[.24em] text-cyan-400 font-semibold">
             06 / Process
           </p>
           <h2 className="text-3xl font-semibold tracking-tight sm:text-5xl lg:text-6xl text-foreground-primary">
@@ -39,9 +39,9 @@ export default function Process() {
               <div>
                 <div className="flex items-center justify-between text-xs font-mono text-foreground-muted/80">
                   <span>0{i + 1}</span>
-                  <span className="h-1.5 w-1.5 rounded-full bg-violet-400 opacity-60 group-hover:opacity-100 transition" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 opacity-60 group-hover:opacity-100 transition" />
                 </div>
-                <div className="mt-5 sm:mt-8 text-lg sm:text-xl font-bold text-foreground-primary group-hover:text-violet-300 transition">
+                <div className="mt-5 sm:mt-8 text-lg sm:text-xl font-bold text-foreground-primary group-hover:text-cyan-300 transition">
                   {step.name}
                 </div>
               </div>

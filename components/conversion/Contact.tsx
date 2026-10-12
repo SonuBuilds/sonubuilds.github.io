@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 import { profile } from "@/data/portfolio";
-import { MagneticButton } from "../ui/MagneticButton";
-import { ArrowUpRight, X, Send, Check, ShieldCheck, Mail, Phone } from "lucide-react";
+import { ArrowUpRight, X, Send, Check, ShieldCheck, Mail } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function Contact() {
@@ -58,39 +57,64 @@ export function Contact() {
 
   return (
     <>
-      <section id="contact" className="py-24 md:py-32 bg-background-primary scroll-mt-12 relative overflow-hidden">
-        <div className="absolute inset-0 bg-accent-primary/5 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] pointer-events-none" />
-        
-        <div className="container-x relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto">
-          <h2 className="text-5xl md:text-7xl lg:text-[7rem] font-bold tracking-tighter text-foreground-primary mb-8 leading-none">
-            Got an idea?
-          </h2>
-          <p className="text-lg md:text-xl text-foreground-secondary max-w-2xl mx-auto mb-12">
-            Whether you have a specific project in mind or just want to chat about architecture and design, my inbox is always open.
-          </p>
+      <section id="contact" className="py-24 scroll-mt-12 relative overflow-hidden">
+        <div className="container-x max-w-2xl relative z-10">
+          <div className="p-8 sm:p-10 rounded-3xl bg-zinc-900/90 hairline-border text-center relative overflow-hidden card-3d-tilt border-cyan-400/35 shadow-[0_0_45px_rgba(0,245,212,0.18)]">
+            {/* Luminous Bokeh Glow Blobs from Ref/stitch_sonu_kumar_portfolio_modernization */}
+            <div className="absolute -top-12 -left-12 w-36 h-36 bg-cyan-400/20 rounded-full blur-2xl pointer-events-none" />
+            <div className="absolute -bottom-12 -right-12 w-36 h-36 bg-purple-500/20 rounded-full blur-2xl pointer-events-none" />
+            
+            <span className="text-[11px] font-mono uppercase tracking-widest text-cyan-400 font-semibold flex items-center justify-center gap-1.5 mb-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />
+              Start A Project
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-black text-white mt-1 mb-3 tracking-tight">
+              Got an idea? Let&apos;s build together.
+            </h2>
+            <p className="text-xs sm:text-sm text-zinc-400 mb-8 max-w-md mx-auto leading-relaxed">
+              Whether you need a full-scale web product, React Native application, or high-performance frontend architecture, my inbox is open.
+            </p>
 
-          <div className="flex flex-col sm:flex-row items-center gap-6">
-            <div onClick={() => setIsModalOpen(true)}>
-              <MagneticButton className="rounded-full bg-foreground-primary shadow-2xl hover:scale-105 px-8 py-4 flex items-center gap-2 text-base font-semibold text-background-primary">
-                Start a conversation <ArrowUpRight size={18} />
-              </MagneticButton>
+            <div className="flex flex-col sm:flex-row items-center gap-3 mb-6">
+              <button 
+                onClick={() => setIsModalOpen(true)}
+                className="w-full sm:flex-1 py-3.5 px-5 rounded-xl bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-300 hover:from-white hover:to-cyan-200 text-zinc-950 font-bold text-xs sm:text-sm tracking-wide shadow-[0_0_28px_rgba(0,245,212,0.4)] active:scale-95 transition-all flex items-center justify-center gap-2 shimmer-action cursor-pointer"
+              >
+                <span>Send a Message</span>
+                <ArrowUpRight size={16} />
+              </button>
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText(profile.email);
+                  alert("Email copied to clipboard!");
+                }}
+                className="w-full sm:flex-1 py-3.5 px-5 rounded-xl bg-zinc-800/80 hover:bg-zinc-700 border border-white/10 hover:border-cyan-400/50 hover:shadow-[0_0_15px_rgba(0,245,212,0.2)] text-zinc-200 font-semibold text-xs sm:text-sm active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-glass"
+              >
+                <Mail size={15} className="text-cyan-400" />
+                <span>Copy Email</span>
+              </button>
             </div>
-          </div>
 
-          <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-sm font-medium text-foreground-muted">
-            <a href={`mailto:${profile.email}`} className="flex items-center gap-2 hover:text-foreground-primary transition-colors">
-              <Mail size={16} />
-              {profile.email}
-            </a>
-            <span className="hidden sm:block text-border-subtle">•</span>
-            <a href={`tel:${profile.phone.replace(/\\s+/g, '')}`} className="flex items-center gap-2 hover:text-foreground-primary transition-colors">
-              <Phone size={16} />
-              {profile.phone}
-            </a>
-            <span className="hidden sm:block text-border-subtle">•</span>
-            <a href={`https://linkedin.com/in/${profile.social.linkedin}`} className="hover:text-foreground-primary transition-colors underline underline-offset-4" target="_blank" rel="noopener noreferrer">
-              LinkedIn
-            </a>
+            <div className="grid grid-cols-2 gap-2.5 pt-4 border-t border-white/10">
+              <a 
+                href={`https://github.com/${profile.social.github}`} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="py-2.5 px-3 rounded-xl bg-zinc-800/80 border border-white/10 text-zinc-300 text-xs font-medium hover:text-cyan-300 hover:border-cyan-400/50 hover:shadow-[0_0_15px_rgba(0,245,212,0.2)] flex items-center justify-center gap-1.5 active:scale-95 transition-all"
+              >
+                <span>GitHub Profile</span>
+                <span className="text-cyan-400 text-[10px]">↗</span>
+              </a>
+              <a 
+                href={`https://linkedin.com/in/${profile.social.linkedin}`} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="py-2.5 px-3 rounded-xl bg-zinc-800/80 border border-white/10 text-zinc-300 text-xs font-medium hover:text-cyan-300 hover:border-cyan-400/50 hover:shadow-[0_0_15px_rgba(0,245,212,0.2)] flex items-center justify-center gap-1.5 active:scale-95 transition-all"
+              >
+                <span>LinkedIn Profile</span>
+                <span className="text-cyan-400 text-[10px]">↗</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -101,13 +125,13 @@ export function Contact() {
             <motion.div 
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               onClick={() => setIsModalOpen(false)}
-              className="absolute inset-0 bg-background-primary/80 backdrop-blur-sm"
+              className="absolute inset-0 bg-[#06080d]/80 backdrop-blur-sm"
             />
             <motion.div 
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="relative w-full max-w-lg overflow-hidden rounded-3xl border border-border-subtle bg-background-secondary p-6 sm:p-8 shadow-2xl"
+              className="relative w-full max-w-lg overflow-hidden rounded-3xl border border-cyan-400/30 bg-[#0b0f17] p-6 sm:p-8 shadow-[0_0_50px_rgba(0,245,212,0.2)]"
             >
               <button onClick={() => setIsModalOpen(false)} className="absolute right-6 top-6 p-2 text-foreground-muted hover:text-foreground-primary transition-colors">
                 <X size={20} />
@@ -118,12 +142,12 @@ export function Contact() {
 
               {submitted ? (
                 <div className="py-8 text-center">
-                  <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-500">
+                  <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-500 shadow-[0_0_15px_rgba(16,185,129,0.3)]">
                     <Check size={28} />
                   </div>
                   <h4 className="text-xl font-bold text-foreground-primary">Message Sent Successfully!</h4>
                   <p className="mt-2 text-sm text-foreground-secondary mb-8">I will get back to you within 24 hours.</p>
-                  <button onClick={() => setSubmitted(false)} className="rounded-full bg-foreground-primary px-6 py-2.5 text-sm font-medium text-background-primary transition hover:opacity-90">
+                  <button onClick={() => setSubmitted(false)} className="rounded-full bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-300 px-6 py-2.5 text-sm font-medium text-zinc-950 transition hover:opacity-90 shadow-[0_0_20px_rgba(0,245,212,0.35)]">
                     Send another
                   </button>
                 </div>
@@ -131,19 +155,19 @@ export function Contact() {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <label className="block text-xs font-semibold text-foreground-muted mb-1.5 uppercase tracking-wider">Your Name</label>
-                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} className="w-full rounded-xl border border-border-subtle bg-background-primary px-4 py-2.5 text-sm text-foreground-primary outline-none transition focus:border-accent-primary" />
+                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} className="w-full rounded-xl border border-white/10 bg-zinc-900/60 px-4 py-2.5 text-sm text-foreground-primary outline-none transition focus:border-cyan-400 focus:shadow-[0_0_15px_rgba(0,245,212,0.2)]" />
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-foreground-muted mb-1.5 uppercase tracking-wider">Email Address</label>
-                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full rounded-xl border border-border-subtle bg-background-primary px-4 py-2.5 text-sm text-foreground-primary outline-none transition focus:border-accent-primary" />
+                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full rounded-xl border border-white/10 bg-zinc-900/60 px-4 py-2.5 text-sm text-foreground-primary outline-none transition focus:border-cyan-400 focus:shadow-[0_0_15px_rgba(0,245,212,0.2)]" />
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-foreground-muted mb-1.5 uppercase tracking-wider">Contact Number (Optional)</label>
-                    <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="+91 00000 00000" className="w-full rounded-xl border border-border-subtle bg-background-primary px-4 py-2.5 text-sm text-foreground-primary outline-none transition focus:border-accent-primary placeholder:text-foreground-muted" />
+                    <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="+91 00000 00000" className="w-full rounded-xl border border-white/10 bg-zinc-900/60 px-4 py-2.5 text-sm text-foreground-primary outline-none transition focus:border-cyan-400 placeholder:text-zinc-500" />
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-foreground-muted mb-1.5 uppercase tracking-wider">Inquiry Type</label>
-                    <select value={category} onChange={(e) => setCategory(e.target.value)} className="w-full rounded-xl border border-border-subtle bg-background-primary px-4 py-2.5 text-sm text-foreground-primary outline-none transition focus:border-accent-primary">
+                    <select value={category} onChange={(e) => setCategory(e.target.value)} className="w-full rounded-xl border border-white/10 bg-zinc-900/90 px-4 py-2.5 text-sm text-foreground-primary outline-none transition focus:border-cyan-400">
                       <option>Full-Time Engineering Role</option>
                       <option>Contract / Freelance Project</option>
                       <option>Technical Advisory / Architecture</option>
@@ -152,16 +176,16 @@ export function Contact() {
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-foreground-muted mb-1.5 uppercase tracking-wider">Message</label>
-                    <textarea rows={4} value={message} onChange={(e) => setMessage(e.target.value)} className="w-full rounded-xl border border-border-subtle bg-background-primary px-4 py-2.5 text-sm text-foreground-primary outline-none transition focus:border-accent-primary resize-none" />
+                    <textarea rows={4} value={message} onChange={(e) => setMessage(e.target.value)} className="w-full rounded-xl border border-white/10 bg-zinc-900/60 px-4 py-2.5 text-sm text-foreground-primary outline-none transition focus:border-cyan-400 resize-none" />
                   </div>
                   
                   {formError && <p className="text-xs text-rose-500 font-medium">{formError}</p>}
 
-                  <button type="submit" disabled={isSubmitting} className="flex w-full items-center justify-center gap-2 rounded-xl bg-accent-primary px-5 py-3 text-sm font-bold text-foreground-primary transition hover:opacity-90 disabled:opacity-50">
+                  <button type="submit" disabled={isSubmitting} className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-300 hover:from-white hover:to-cyan-200 px-5 py-3 text-sm font-bold text-zinc-950 transition hover:opacity-95 disabled:opacity-50 shadow-[0_0_20px_rgba(0,245,212,0.35)] cursor-pointer">
                     <Send size={16} /> <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
                   </button>
                   <p className="text-center text-xs text-foreground-muted mt-4">
-                    <ShieldCheck size={14} className="inline mr-1 text-emerald-500" /> Zero spam. Secure connection.
+                    <ShieldCheck size={14} className="inline mr-1 text-emerald-400" /> Zero spam. Secure connection.
                   </p>
                 </form>
               )}

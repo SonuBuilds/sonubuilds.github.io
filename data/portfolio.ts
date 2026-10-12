@@ -326,19 +326,19 @@ export const experience: Experience[] = [
     period: "08/2025 — Present",
     company: "SPODS Technologies",
     location: "Delhi, India",
-    role: "Frontend Developer — React, React Native & Next.js",
+    role: "Full-Stack Developer — React, React Native & Node.js",
     logo: "/logos/spods.png",
     url: "https://www.spodstechnologies.com/",
-    tags: ["React.js", "React Native", "Next.js", "Redux Toolkit", "Google Maps API", "Firebase Auth & FCM"],
+    tags: ["React.js", "React Native", "Next.js", "Node.js", "Redux Toolkit", "Google Maps API", "Firebase Auth & FCM"],
     bullets: [
       "Developing and maintaining the Pick A Pro ecosystem including web platform, mobile application, admin dashboard, and Pick A Pro Partner app.",
       "Implemented role-based login and authorization to manage access for users, partners, and admin modules securely.",
       "Building cross-platform applications using React JS, Next.js, and React Native with reusable and modular component architecture.",
       "Using Redux Toolkit (RTK) for centralized state management and seamless data flow across web and mobile.",
-      "Integrating REST APIs and third-party services to deliver real-time functionality and enhanced user experience.",
+      "Integrating REST APIs, Node.js backend services, and third-party APIs to deliver real-time functionality and enhanced user experience.",
       "Developing dynamic dashboards with role-specific features, analytics, and business workflows.",
       "Optimizing performance, responsiveness, and code quality for scalable multi-device applications.",
-      "Collaborating with backend and product teams to deliver user-centric and maintainable solutions."
+      "Collaborating with backend and product teams to deliver user-centric and maintainable full-stack solutions."
     ]
   },
   {

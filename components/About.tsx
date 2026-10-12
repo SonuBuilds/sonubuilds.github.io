@@ -60,7 +60,7 @@ function StatCard({ value, label }: { value: string; label: string }) {
     <motion.div
       ref={ref}
       whileHover={{ backgroundColor: "rgba(255,255,255,.06)" }}
-      className="bg-[#0b0b0b] p-4 sm:p-6 transition flex flex-col justify-center"
+      className="bg-[#09090b] p-4 sm:p-6 transition flex flex-col justify-center"
     >
       <div className="text-2xl font-bold tracking-tight text-foreground-primary sm:text-3xl lg:text-4xl">
         {displayValue}
@@ -84,7 +84,7 @@ export default function About() {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6 }}
             >
-              <p className="mb-2 sm:mb-3 text-xs uppercase tracking-[.24em] text-violet-300 font-semibold">
+              <p className="mb-2 sm:mb-3 text-xs uppercase tracking-[.24em] text-cyan-400 font-semibold">
                 01 / About
               </p>
               <h2 className="text-3xl font-semibold tracking-tight sm:text-5xl lg:text-6xl text-foreground-primary">
@@ -123,10 +123,10 @@ export default function About() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: idx * 0.1, duration: 0.5 }}
-                      className="rounded-2xl border border-border-subtle bg-background-primary/60 p-4 sm:p-5 backdrop-blur-sm hover:border-violet-500/30 transition group"
+                      className="rounded-2xl border border-border-subtle bg-background-primary/60 p-4 sm:p-5 backdrop-blur-sm hover:border-cyan-500/30 transition group"
                     >
                       <div className="flex items-center gap-3 mb-2 sm:mb-2.5">
-                        <div className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-xl border border-violet-500/30 bg-violet-500/10 text-violet-300 group-hover:scale-105 transition shrink-0">
+                        <div className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-xl border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 group-hover:scale-105 transition shrink-0">
                           <Icon size={17} />
                         </div>
                         <h3 className="text-xs sm:text-sm font-semibold text-foreground-primary tracking-wide">

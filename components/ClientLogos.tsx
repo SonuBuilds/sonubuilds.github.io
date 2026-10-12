@@ -27,8 +27,8 @@ export default function ClientLogos() {
       {/* Infinite Marquee Container */}
       <div className="relative flex overflow-hidden">
         {/* Left & Right Gradients for smooth fade-in/out */}
-        <div className="absolute left-0 top-0 z-10 h-full w-[100px] sm:w-[200px] bg-gradient-to-r from-[#0a0a0a] to-transparent pointer-events-none" />
-        <div className="absolute right-0 top-0 z-10 h-full w-[100px] sm:w-[200px] bg-gradient-to-l from-[#0a0a0a] to-transparent pointer-events-none" />
+        <div className="absolute left-0 top-0 z-10 h-full w-[100px] sm:w-[200px] bg-gradient-to-r from-background-secondary to-transparent pointer-events-none" />
+        <div className="absolute right-0 top-0 z-10 h-full w-[100px] sm:w-[200px] bg-gradient-to-l from-background-secondary to-transparent pointer-events-none" />
 
         {/* Marquee Track */}
         <motion.div

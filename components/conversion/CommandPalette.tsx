@@ -3,14 +3,11 @@
 import { useEffect, useState } from "react";
 import { Command } from "cmdk";
 import { useRouter } from "next/navigation";
-import { profile, projects } from "@/data/portfolio";
+import { projects } from "@/data/portfolio";
 import { Search, Monitor, User, Briefcase, Mail, FileText, Code2 } from "lucide-react";
-import { useTheme } from "next-themes";
-
 export function CommandPalette() {
   const [open, setOpen] = useState(false);
   const router = useRouter();
-  const { setTheme } = useTheme();
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -81,15 +78,6 @@ export function CommandPalette() {
                 <Code2 className="w-4 h-4" /> {p.title}
               </Command.Item>
             ))}
-          </Command.Group>
-
-          <Command.Group heading="Theme" className="text-xs font-semibold text-foreground-muted px-2 py-2 mt-2 border-t border-border-subtle">
-            <Command.Item onSelect={() => runCommand(() => setTheme("light"))} className="flex items-center gap-3 px-3 py-2 text-sm text-foreground-primary rounded-md cursor-pointer hover:bg-background-primary transition-colors aria-selected:bg-background-primary">
-              Light Mode
-            </Command.Item>
-            <Command.Item onSelect={() => runCommand(() => setTheme("dark"))} className="flex items-center gap-3 px-3 py-2 text-sm text-foreground-primary rounded-md cursor-pointer hover:bg-background-primary transition-colors aria-selected:bg-background-primary">
-              Dark Mode
-            </Command.Item>
           </Command.Group>
         </Command.List>
       </Command.Dialog>

@@ -14,7 +14,7 @@ export default function Education() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
         >
-          <p className="mb-2 sm:mb-3 text-xs uppercase tracking-[.24em] text-violet-300 font-semibold">
+          <p className="mb-2 sm:mb-3 text-xs uppercase tracking-[.24em] text-cyan-400 font-semibold">
             05 / Education & Achievements
           </p>
           <h2 className="mb-8 sm:mb-14 max-w-3xl text-3xl font-semibold tracking-tight sm:text-5xl text-foreground-primary">
@@ -26,8 +26,8 @@ export default function Education() {
           {/* Education Column */}
           <div>
             <div className="flex items-center gap-3 mb-8">
-               <div className="h-10 w-10 rounded-full bg-violet-500/10 flex items-center justify-center">
-                  <GraduationCap className="text-violet-400" size={20} />
+               <div className="h-10 w-10 rounded-full bg-cyan-500/10 flex items-center justify-center">
+                  <GraduationCap className="text-cyan-400" size={20} />
                </div>
                <h3 className="text-2xl font-bold text-foreground-primary tracking-tight">Education</h3>
             </div>
@@ -42,9 +42,9 @@ export default function Education() {
                   transition={{ delay: index * 0.1, duration: 0.5 }}
                   className="relative pl-6 sm:pl-8 border-l-2 border-border-subtle"
                 >
-                  <div className="absolute left-[-5px] top-1.5 h-2 w-2 rounded-full bg-violet-500 shadow-[0_0_10px_rgba(139,92,246,0.6)]" />
+                  <div className="absolute left-[-5px] top-1.5 h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(6,182,212,0.6)]" />
                   
-                  <div className="text-xs font-semibold uppercase tracking-wider text-violet-300/80 mb-1">
+                  <div className="text-xs font-semibold uppercase tracking-wider text-cyan-400 mb-1">
                     {edu.period}
                   </div>
                   <h4 className="text-lg font-bold text-foreground-primary mb-1">

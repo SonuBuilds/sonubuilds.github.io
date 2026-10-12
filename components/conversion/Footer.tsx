@@ -17,7 +17,7 @@ export function Footer() {
   }, []);
 
   return (
-    <footer className="bg-background-secondary pt-16 pb-8 border-t border-border-subtle relative z-20">
+    <footer className="pt-16 pb-8 border-t border-white/10 bg-zinc-950/60 backdrop-blur-md relative z-20">
       <div className="container-x">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12 mb-16">
           <div>
@@ -44,12 +44,12 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 border-t border-border-subtle text-xs font-medium text-foreground-muted">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 border-t border-white/10 text-xs font-mono text-zinc-400">
           <div>
-            © {new Date().getFullYear()} {profile.name}. All rights reserved.
+            Sonu Kumar · Portfolio © {new Date().getFullYear()} · Next-gen Architecture
           </div>
-          <div className="flex items-center gap-6">
-            <span className="hidden sm:inline">Press <kbd className="font-mono bg-background-primary border border-border-subtle rounded px-1.5 py-0.5 shadow-sm mx-1">⌘ K</kbd> to navigate</span>
+          <div className="flex items-center gap-6 text-[11px] text-zinc-500">
+            <span className="hidden sm:inline">Press <kbd className="font-mono bg-black/60 border border-white/10 rounded px-1.5 py-0.5 shadow-sm mx-1 text-cyan-300">⌘ K</kbd> Command Palette</span>
             <span>Local time: {time}</span>
           </div>
         </div>

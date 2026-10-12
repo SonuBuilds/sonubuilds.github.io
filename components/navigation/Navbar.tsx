@@ -3,7 +3,6 @@
 import * as React from "react";
 import { useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import { ThemeToggle } from "./ThemeToggle";
 import { MobileMenu } from "./MobileMenu";
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/cn";
@@ -68,12 +67,9 @@ export function Navbar() {
             >
               Resume
             </Link>
-            <div className="w-px h-4 bg-border-subtle mx-1" />
-            <ThemeToggle />
           </nav>
 
           <div className="flex items-center gap-4 md:hidden">
-            <ThemeToggle />
             <button
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Open menu"

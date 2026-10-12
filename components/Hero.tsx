@@ -160,26 +160,26 @@ export default function Hero() {
             className="relative mx-auto w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[390px]"
           >
             {/* Ambient backlight glow */}
-            <div className="absolute -inset-4 sm:-inset-6 rounded-[2.5rem] bg-gradient-to-tr from-violet-600/30 via-fuchsia-600/20 to-cyan-500/25 blur-3xl pointer-events-none opacity-80" />
-            <div className="absolute -inset-1 rounded-[2.2rem] bg-gradient-to-b from-violet-500/25 via-transparent to-cyan-500/15 blur-md pointer-events-none" />
+            <div className="absolute -inset-4 sm:-inset-6 rounded-[2.5rem] bg-gradient-to-tr from-cyan-500/30 via-teal-500/20 to-violet-600/25 blur-3xl pointer-events-none opacity-80" />
+            <div className="absolute -inset-1 rounded-[2.2rem] bg-gradient-to-b from-cyan-500/25 via-transparent to-violet-500/15 blur-md pointer-events-none" />
 
             {/* Framed portrait card */}
-            <div className="group relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] border border-white/15 bg-gradient-to-b from-zinc-900/95 via-[#0b0c13] to-[#050508] shadow-2xl shadow-violet-950/40 backdrop-blur-md">
+            <div className="group relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] border border-white/15 bg-gradient-to-b from-zinc-900/95 via-[#0d0e15] to-[#050505] shadow-2xl shadow-cyan-950/40 backdrop-blur-md">
               {/* Radial studio halo centered behind portrait */}
-              <div className="pointer-events-none absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 h-64 w-64 rounded-full bg-gradient-to-br from-violet-500/30 via-cyan-400/20 to-transparent blur-2xl" />
+              <div className="pointer-events-none absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 h-64 w-64 rounded-full bg-gradient-to-br from-cyan-500/30 via-teal-400/20 to-transparent blur-2xl" />
 
               {/* Concentric aura orbital rings */}
-              <div className="pointer-events-none absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 h-52 w-52 rounded-full border border-violet-400/15" />
+              <div className="pointer-events-none absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 h-52 w-52 rounded-full border border-cyan-400/15" />
               <div className="pointer-events-none absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 h-[17rem] w-[17rem] rounded-full border border-dashed border-cyan-400/10" />
 
               {/* Subtle tech background grid pattern */}
               <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_35%,#000_60%,transparent_100%)]" />
 
               {/* Top subtle rim light highlight */}
-              <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-violet-400/60 to-transparent" />
+              <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent" />
 
               {/* Corner crosshairs */}
-              <span className="pointer-events-none absolute left-3.5 top-3 font-mono text-[9px] text-violet-400/60 select-none">┌</span>
+              <span className="pointer-events-none absolute left-3.5 top-3 font-mono text-[9px] text-cyan-400/60 select-none">┌</span>
               <span className="pointer-events-none absolute right-3.5 top-3 font-mono text-[9px] text-cyan-400/60 select-none">┐</span>
 
               {/* Portrait image */}
@@ -193,15 +193,15 @@ export default function Hero() {
               </div>
 
               {/* Gentle dark gradient overlay at bottom for card text readability & grounding */}
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-2/5 bg-gradient-to-t from-[#050508] via-[#050508]/85 to-transparent" />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-2/5 bg-gradient-to-t from-[#050505] via-[#050505]/85 to-transparent" />
 
               {/* Bottom executive tag */}
-              <div className="absolute bottom-3 sm:bottom-4 left-3 right-3 sm:left-4 sm:right-4 z-30 rounded-2xl border border-white/15 bg-black/75 p-3 sm:p-3.5 backdrop-blur-xl shadow-xl transition-all duration-300 group-hover:border-violet-400/30">
+              <div className="absolute bottom-3 sm:bottom-4 left-3 right-3 sm:left-4 sm:right-4 z-30 rounded-2xl border border-white/15 bg-black/75 p-3 sm:p-3.5 backdrop-blur-xl shadow-xl transition-all duration-300 group-hover:border-cyan-400/30">
                 <div className="flex items-center justify-between gap-2">
                   <div className="min-w-0">
                     <div className="flex items-center gap-1.5">
                       <p className="truncate text-xs sm:text-sm font-bold tracking-wide text-foreground-primary">Sonu Kumar</p>
-                      <span className="inline-block h-1.5 w-1.5 rounded-full bg-violet-400" />
+                      <span className="inline-block h-1.5 w-1.5 rounded-full bg-cyan-400" />
                     </div>
                     <p className="truncate text-[11px] sm:text-xs text-foreground-muted">Full-Stack Product Engineer</p>
                   </div>

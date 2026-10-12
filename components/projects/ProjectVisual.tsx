@@ -22,7 +22,7 @@ export function ProjectVisual({ project }: { project: Project }) {
   return (
     <motion.div 
       ref={containerRef}
-      className="relative w-full aspect-[16/10] overflow-hidden rounded-2xl md:rounded-[2rem] bg-background-secondary border border-border-subtle group"
+      className="relative w-full aspect-[16/10] overflow-hidden rounded-2xl md:rounded-[2rem] bg-background-secondary border border-border-subtle group-hover:border-cyan-500/30 transition-all"
       style={{
         scale,
         clipPath: useTransform(clipInset, (v) => `inset(${v} round 2rem)`)
@@ -35,16 +35,20 @@ export function ProjectVisual({ project }: { project: Project }) {
           <ProjectPlaceholder slug={project.slug} />
         </div>
       ) : (
-        <div className="absolute inset-0 md:inset-8 lg:inset-12 pointer-events-none rounded-xl md:rounded-2xl overflow-hidden shadow-2xl">
+        <div className="group/preview absolute inset-0 md:inset-8 lg:inset-12 rounded-xl md:rounded-2xl overflow-hidden shadow-2xl border border-white/10 hover:border-cyan-400/40 transition-colors pointer-events-auto cursor-pointer">
           {project.images?.desktop && (
             <SmartImage 
               src={project.images.desktop}
               alt={project.title}
               fill
-              className="object-cover object-top transition-all duration-[4000ms] ease-in-out group-hover:object-bottom"
+              className="object-cover object-top transition-[object-position] duration-1000 ease-out group-hover/preview:duration-[14000ms] group-hover/preview:ease-linear group-hover/preview:object-bottom"
               sizes="(max-width: 1200px) 90vw, 1000px"
             />
           )}
+          <div className="absolute bottom-3 right-3 px-2 py-1 rounded-md bg-black/80 backdrop-blur-md border border-cyan-400/30 text-[10px] font-mono text-cyan-300 opacity-0 group-hover/preview:opacity-100 transition-opacity pointer-events-none flex items-center gap-1 shadow-lg">
+            <span>Scroll Preview</span>
+            <span className="text-xs">↓</span>
+          </div>
         </div>
       )}
     </motion.div>

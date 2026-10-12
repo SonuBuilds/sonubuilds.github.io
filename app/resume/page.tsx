@@ -17,9 +17,10 @@ export default function ResumePage() {
   const [mode, setMode] = useState<"ats" | "modern">(() => {
     if (typeof window !== "undefined") {
       const m = new URLSearchParams(window.location.search).get("mode");
+      if (m === "ats") return "ats";
       if (m === "modern") return "modern";
     }
-    return "ats";
+    return "modern";
   });
   const [font, setFont] = useState("Inter");
   const [copied, setCopied] = useState(false);
@@ -106,7 +107,7 @@ TECHNICAL SKILLS
 ==================================================
 WORK EXPERIENCE
 ==================================================
-FRONT-END DEVELOPER | REACT NATIVE | REACT | NEXT
+FULL-STACK DEVELOPER | REACT NATIVE | REACT | NODE
 SPODS Technologies • Delhi, India (08/2025 — Present)
 • Developing and maintaining the Pick A Pro marketplace ecosystem across web, React Native mobile, admin dashboard, and Partner app.
 • Implemented secure role-based access control (RBAC) and authorization workflows across users, partners, and admin modules.
@@ -223,74 +224,86 @@ ${keyAchievements.map((k) => `• ${k}`).join("\n")}
   };
 
   return (
-    <div className="resume-page-wrapper min-h-screen bg-[#070708] pt-24 pb-6 sm:pt-28 sm:pb-10 text-white selection:bg-violet-500/30 selection:text-white print:bg-white print:py-0 print:m-0 print:p-0 print:min-h-0 print:text-black">
+    <div className="resume-page-wrapper min-h-screen bg-transparent pt-24 pb-12 sm:pt-28 sm:pb-16 text-white selection:bg-cyan-400 selection:text-black relative overflow-x-hidden print:bg-white print:py-0 print:m-0 print:p-0 print:min-h-0 print:text-black">
+      {/* Ambient Holographic Floating Glow Orbs with Obsidian Void theme from stitch modernization */}
+      <div aria-hidden="true" className="no-print fixed top-1/4 -left-20 w-[24rem] h-[24rem] rounded-full bg-cyan-400/20 blur-[100px] orb-1 pointer-events-none -z-10" />
+      <div aria-hidden="true" className="no-print fixed top-2/3 -right-24 w-[28rem] h-[28rem] rounded-full bg-fuchsia-600/20 blur-[110px] orb-2 pointer-events-none -z-10" />
+      <div aria-hidden="true" className="no-print fixed top-1/2 left-1/3 w-[22rem] h-[22rem] rounded-full bg-emerald-500/15 blur-[90px] orb-3 pointer-events-none -z-10" />
+      <div aria-hidden="true" className="no-print fixed inset-0 cyber-scanlines opacity-40 pointer-events-none -z-10" />
+      <div aria-hidden="true" className="no-print fixed inset-0 grid-lines pointer-events-none -z-10" />
+      <div aria-hidden="true" className="no-print absolute top-12 left-1/2 -translate-x-1/2 w-[900px] h-[750px] bg-radial-hero pointer-events-none opacity-90 -z-10" />
+
       {/* CONTROL TOOLBAR (HIDDEN IN PRINT) */}
-      <div className="no-print container-x max-w-[900px] mb-6 sm:mb-8">
-        <div className="glass rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 flex flex-col gap-3.5 sm:gap-4">
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-3 sm:pb-3.5">
+      <div className="no-print container-x max-w-[900px] mb-8">
+        <div className="rounded-3xl p-4 sm:p-5 flex flex-col gap-4 bg-zinc-900/80 border border-white/10 shadow-glass backdrop-blur-2xl">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-3 sm:pb-4">
             {/* Back button */}
             <Link
               href="/"
-              className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-zinc-300 transition hover:text-white"
+              className="flex items-center gap-2 text-xs sm:text-sm text-zinc-300 transition-colors hover:text-cyan-300 font-medium"
             >
-              <ArrowLeft size={15} />
+              <ArrowLeft size={16} />
               <span>Back to Portfolio</span>
             </Link>
 
-            {/* ATS Badge */}
-            <div className="flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs font-medium text-emerald-300">
-              <ShieldCheck size={13} />
-              <span>Verified Format</span>
+            {/* ATS Verified Badge */}
+            <div className="flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-[11px] sm:text-xs font-semibold text-emerald-300 shadow-[0_0_12px_rgba(16,185,129,0.25)]">
+              <ShieldCheck size={14} className="text-emerald-400" />
+              <span>ATS-Optimized &amp; Verified</span>
             </div>
 
-            {/* View Mode Toggle */}
-            <div className="flex rounded-full border border-white/10 bg-black/40 p-1 text-[11px] sm:text-xs">
-              <button
-                type="button"
-                onClick={() => setMode("ats")}
-                className={`rounded-full px-2.5 sm:px-3 py-1 transition ${
-                  mode === "ats" ? "bg-white text-black font-semibold" : "text-zinc-400 hover:text-white"
-                }`}
-              >
-                Classic White
-              </button>
+            {/* View Mode Toggle: Dark Modern vs Classic White */}
+            <div className="flex rounded-full border border-white/10 bg-black/60 p-1 text-[11px] sm:text-xs">
               <button
                 type="button"
                 onClick={() => setMode("modern")}
-                className={`rounded-full px-2.5 sm:px-3 py-1 transition ${
-                  mode === "modern" ? "bg-violet-600 text-white font-semibold" : "text-zinc-400 hover:text-white"
+                className={`rounded-full px-3 py-1 font-semibold transition-all ${
+                  mode === "modern" 
+                    ? "bg-gradient-to-r from-cyan-400 to-teal-300 text-zinc-950 shadow-[0_0_12px_rgba(0,245,212,0.4)]" 
+                    : "text-zinc-400 hover:text-white"
                 }`}
               >
                 Dark Modern
               </button>
+              <button
+                type="button"
+                onClick={() => setMode("ats")}
+                className={`rounded-full px-3 py-1 font-semibold transition-all ${
+                  mode === "ats" 
+                    ? "bg-white text-zinc-950 shadow-md" 
+                    : "text-zinc-400 hover:text-white"
+                }`}
+              >
+                Classic White
+              </button>
             </div>
           </div>
 
-          {/* SECOND BAR: LAYOUT SELECTOR & ACTIONS */}
-          <div className="flex flex-wrap items-center justify-between gap-3 sm:gap-4">
-            {/* 1-PAGE vs DETAILED TOGGLE */}
+          {/* SECOND BAR: FORMAT, FONT & ACTIONS */}
+          <div className="flex flex-wrap items-center justify-between gap-3.5">
+            {/* Format Selector: Single Page vs Detailed */}
             <div className="flex items-center gap-2">
-              <span className="text-xs text-zinc-400 font-medium hidden sm:inline">Format:</span>
-              <div className="flex rounded-full border border-white/15 bg-black/50 p-1 text-[11px] sm:text-xs">
+              <span className="text-xs text-zinc-400 font-mono hidden sm:inline">Format:</span>
+              <div className="flex rounded-full border border-white/10 bg-black/60 p-1 text-[11px] sm:text-xs">
                 <button
                   type="button"
                   onClick={() => setLayout("single")}
-                  className={`flex items-center gap-1.5 rounded-full px-3 sm:px-3.5 py-1 sm:py-1.5 transition ${
+                  className={`flex items-center gap-1.5 rounded-full px-3.5 py-1.5 font-semibold transition-all ${
                     layout === "single"
-                      ? "bg-violet-600 text-white font-bold shadow-sm shadow-violet-600/50"
+                      ? "bg-gradient-to-r from-cyan-400 to-teal-300 text-zinc-950 shadow-[0_0_12px_rgba(0,245,212,0.4)]"
                       : "text-zinc-400 hover:text-white"
                   }`}
                 >
                   <FileText size={13} />
                   <span>Single Page</span>
-                  <span className="ml-1 rounded bg-white/20 px-1.5 py-0.2 text-[9px] sm:text-[10px] text-white">Recommended</span>
+                  <span className={`ml-1 rounded px-1.5 py-0.2 text-[9px] font-bold ${layout === "single" ? "bg-black/20 text-zinc-950" : "bg-cyan-500/20 text-cyan-300 border border-cyan-400/30"}`}>Rec</span>
                 </button>
                 <button
                   type="button"
                   onClick={() => setLayout("detailed")}
-                  className={`flex items-center gap-1.5 rounded-full px-3 sm:px-3.5 py-1 sm:py-1.5 transition ${
+                  className={`flex items-center gap-1.5 rounded-full px-3.5 py-1.5 font-semibold transition-all ${
                     layout === "detailed"
-                      ? "bg-violet-600 text-white font-bold shadow-sm shadow-violet-600/50"
+                      ? "bg-gradient-to-r from-cyan-400 to-teal-300 text-zinc-950 shadow-[0_0_12px_rgba(0,245,212,0.4)]"
                       : "text-zinc-400 hover:text-white"
                   }`}
                 >
@@ -302,19 +315,18 @@ ${keyAchievements.map((k) => `• ${k}`).join("\n")}
 
             {/* FONT SELECTOR */}
             <div className="flex items-center gap-2">
-              <span className="text-xs text-zinc-400 font-medium hidden sm:inline">Font:</span>
+              <span className="text-xs text-zinc-400 font-mono hidden sm:inline">Font:</span>
               <select
                 value={font}
                 onChange={(e) => setFont(e.target.value)}
-                className="bg-black/50 border border-white/15 rounded-full px-3 py-1.5 text-xs text-white outline-none cursor-pointer hover:border-white/30 transition appearance-none"
-                style={{ paddingRight: "1.5rem", backgroundImage: "url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')", backgroundRepeat: "no-repeat", backgroundPosition: "right .5rem top 50%", backgroundSize: ".65rem auto" }}
+                className="bg-black/60 border border-white/15 rounded-full px-3.5 py-1.5 text-xs text-zinc-200 outline-none cursor-pointer hover:border-cyan-400/40 transition appearance-none font-mono"
+                style={{ paddingRight: "1.75rem", backgroundImage: "url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2322d3ee%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')", backgroundRepeat: "no-repeat", backgroundPosition: "right .6rem top 50%", backgroundSize: ".6rem auto" }}
               >
-                <option value="Inter">Inter (Standard)</option>
+                <option value="Inter">Inter (Sans)</option>
                 <option value="Roboto">Roboto</option>
                 <option value="Open Sans">Open Sans</option>
                 <option value="Lato">Lato</option>
                 <option value="Merriweather">Merriweather (Serif)</option>
-                <option value="Playfair Display">Playfair (Serif)</option>
                 <option value="Fira Code">Fira Code (Mono)</option>
               </select>
             </div>
@@ -325,7 +337,7 @@ ${keyAchievements.map((k) => `• ${k}`).join("\n")}
               <button
                 type="button"
                 onClick={copyPlainTextResume}
-                className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-zinc-300 transition hover:bg-white/10 hover:text-white"
+                className="flex items-center gap-1.5 rounded-full border border-white/10 bg-zinc-800/80 px-3 py-1.5 text-xs text-zinc-300 transition hover:border-cyan-400/40 hover:text-cyan-300"
                 title="Copy plain text formatted for job application forms"
               >
                 {copied ? <Check size={14} className="text-emerald-400" /> : <Copy size={14} />}
@@ -337,7 +349,7 @@ ${keyAchievements.map((k) => `• ${k}`).join("\n")}
                 type="button"
                 onClick={handleDownload}
                 disabled={downloading}
-                className="flex items-center gap-1.5 rounded-full bg-white px-3.5 sm:px-4 py-1.5 text-xs font-semibold text-black transition hover:bg-zinc-200 shadow-lg shadow-white/10 disabled:opacity-70 cursor-pointer"
+                className="flex items-center gap-1.5 rounded-full bg-gradient-to-r from-cyan-400 to-teal-300 hover:from-white hover:to-cyan-300 text-zinc-950 px-4 py-1.5 text-xs font-bold transition-all shadow-[0_0_18px_rgba(0,245,212,0.35)] active:scale-95 disabled:opacity-70 cursor-pointer"
                 title="Directly download high-resolution PDF"
               >
                 {downloading ? (
@@ -353,11 +365,11 @@ ${keyAchievements.map((k) => `• ${k}`).join("\n")}
                 )}
               </button>
 
-              {/* Print / Save to PDF via Browser */}
+              {/* Print Button */}
               <button
                 type="button"
                 onClick={handlePrint}
-                className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-zinc-300 transition hover:bg-white/10 hover:text-white"
+                className="flex items-center gap-1.5 rounded-full border border-white/10 bg-zinc-800/80 px-3 py-1.5 text-xs text-zinc-300 transition hover:border-cyan-400/40 hover:text-cyan-300"
                 title="Save as PDF via browser print"
               >
                 <Printer size={14} />
@@ -368,14 +380,14 @@ ${keyAchievements.map((k) => `• ${k}`).join("\n")}
         </div>
 
         {/* Informative helper note */}
-        <div className="mt-3 flex flex-wrap items-center justify-between gap-2 px-2 text-xs text-zinc-500">
+        <div className="mt-3 flex flex-wrap items-center justify-between gap-2 px-2 text-xs text-zinc-400 font-mono">
           <p>
             {layout === "single"
-              ? "⚡ Single Page: Executive summary format engineered for quick executive reviews & high impact."
-              : "📋 Detailed CV: Comprehensive multi-page format highlighting complete project experience & technical skills."}
+              ? "⚡ Single Page: High-impact executive summary optimized for 1-minute HR screen."
+              : "📋 Detailed CV: Complete comprehensive multi-page format showcasing in-depth architecture."}
           </p>
-          <p className="hidden md:block">
-            Press <kbd className="rounded border border-white/10 bg-black/40 px-1 py-0.5 text-[10px] text-zinc-300">⌘ + P</kbd> anytime to save as PDF.
+          <p className="hidden md:block text-zinc-500">
+            Press <kbd className="rounded border border-white/15 bg-black/60 px-1.5 py-0.5 text-[10px] text-cyan-300">⌘ + P</kbd> to save PDF directly.
           </p>
         </div>
       </div>
@@ -386,7 +398,7 @@ ${keyAchievements.map((k) => `• ${k}`).join("\n")}
       </main>
 
       {/* FOOTER CALLOUT (HIDDEN IN PRINT) */}
-      <div className="no-print container-x max-w-[900px] mt-12 text-center text-xs text-zinc-600">
+      <div className="no-print container-x max-w-[900px] mt-12 text-center text-xs text-zinc-500 font-mono">
         <p>Sonu Kumar — Full-Stack Developer • Professional Curriculum Vitae</p>
       </div>
     </div>

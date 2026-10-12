@@ -10,7 +10,7 @@ if (!fs.existsSync(publicDir)) fs.mkdirSync(publicDir, { recursive: true });
 if (!fs.existsSync(scratchDir)) fs.mkdirSync(scratchDir, { recursive: true });
 
 function getIcons(isDark) {
-  const c = isDark ? '#a78bfa' : '#2563eb';
+  const c = isDark ? '#00f5d4' : '#2563eb';
   return {
     location: `<svg width="10.5" height="10.5" viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-1px; margin-right:3.5px;"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>`,
     phone: `<svg width="10.5" height="10.5" viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-1px; margin-right:3.5px;"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>`,
@@ -22,35 +22,42 @@ function getIcons(isDark) {
 }
 
 function getStyles(isDark) {
-  const bg = isDark ? '#0d0e14' : '#ffffff';
+  const bg = isDark ? '#0b0f17' : '#ffffff';
   const text = isDark ? '#cbd5e1' : '#1e293b';
   const titleColor = isDark ? '#ffffff' : '#0f172a';
-  const borderHeader = isDark ? '#8b5cf6' : '#2563eb';
-  const sectionBorder = isDark ? '#334155' : '#cbd5e1';
-  const accent = isDark ? '#a78bfa' : '#2563eb';
-  const tagBg = isDark ? 'rgba(139, 92, 246, 0.15)' : '#eff6ff';
-  const tagBorder = isDark ? 'rgba(139, 92, 246, 0.35)' : '#bfdbfe';
-  const tagText = isDark ? '#c4b5fd' : '#1d4ed8';
+  const borderHeader = isDark ? '#00f5d4' : '#2563eb';
+  const sectionBorder = isDark ? 'rgba(0, 245, 212, 0.35)' : '#cbd5e1';
+  const accent = isDark ? '#00f5d4' : '#2563eb';
+  const tagBg = isDark ? 'rgba(0, 245, 212, 0.12)' : '#eff6ff';
+  const tagBorder = isDark ? 'rgba(0, 245, 212, 0.35)' : '#bfdbfe';
+  const tagText = isDark ? '#2dd4bf' : '#1d4ed8';
   const subText = isDark ? '#94a3b8' : '#64748b';
-  const bulletColor = isDark ? '#a78bfa' : '#2563eb';
+  const bulletColor = isDark ? '#00f5d4' : '#2563eb';
 
   return `
     @page {
       size: letter portrait;
-      margin: 6mm 9mm 5mm 9mm;
+      margin: 0;
     }
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+    html, body {
+      background: ${bg};
+      width: 100%;
+      min-height: 100%;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: ${text};
-      background: ${bg};
       font-size: 8.85pt;
       line-height: 1.28;
       -webkit-font-smoothing: antialiased;
+      padding: 6.5mm 9.5mm 5.5mm 9.5mm;
     }
     header {
       text-align: center;
@@ -339,7 +346,7 @@ function buildSinglePageHtml(isDark) {
     <div class="exp-item">
       <div class="exp-header">
         <div>
-          <span class="exp-company">SPODS Technologies</span> • <span class="exp-role">Front-end Developer | React Native | React | Next</span>
+          <span class="exp-company">SPODS Technologies</span> • <span class="exp-role">Full-Stack Developer | React Native | React | Node</span>
         </div>
         <span class="exp-date">08/2025 — Present | Delhi, India</span>
       </div>
@@ -494,11 +501,12 @@ function buildDetailedHtml(isDark) {
     ${getStyles(isDark)}
     @page {
       size: letter portrait;
-      margin: 9mm 11mm 8mm 11mm;
+      margin: 0;
     }
     body {
       font-size: 8.6pt;
       line-height: 1.34;
+      padding: 8.5mm 11mm 7.5mm 11mm;
     }
     .page-break {
       page-break-before: always;
@@ -596,7 +604,7 @@ function buildDetailedHtml(isDark) {
     <div class="exp-item">
       <div class="exp-header">
         <div>
-          <span class="exp-company">SPODS Technologies</span> • <span class="exp-role">Front-end Developer | React Native | React | Next</span>
+          <span class="exp-company">SPODS Technologies</span> • <span class="exp-role">Full-Stack Developer | React Native | React | Node</span>
         </div>
         <span class="exp-date">08/2025 — Present | Delhi, India</span>
       </div>

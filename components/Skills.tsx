@@ -150,7 +150,7 @@ export default function Skills() {
   const groups = filterGroups();
 
   return (
-    <section id="skills" className="relative section-pad border-y border-border-subtle bg-[#070707] overflow-hidden">
+    <section id="skills" className="relative section-pad border-y border-border-subtle bg-[#050505] overflow-hidden">
       
       {/* Infinite Tech Marquee Background */}
       <div className="absolute top-0 left-0 w-full overflow-hidden opacity-5 pointer-events-none py-4 border-b border-border-subtle">
@@ -173,7 +173,7 @@ export default function Skills() {
       <div className="container-x relative z-10 pt-8 sm:pt-4">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-8 sm:mb-12">
           <div>
-            <p className="mb-2 sm:mb-3 text-xs uppercase tracking-[.24em] text-violet-300 font-semibold">
+            <p className="mb-2 sm:mb-3 text-xs uppercase tracking-[.24em] text-cyan-400 font-semibold">
               02 / Technology Stack
             </p>
             <h2 className="text-3xl font-semibold tracking-tight sm:text-5xl lg:text-6xl text-foreground-primary">
@@ -201,7 +201,7 @@ export default function Skills() {
                     : "glass text-foreground-muted hover:text-foreground-primary hover:bg-foreground-primary/10"
                 }`}
               >
-                <Icon size={14} className={isActive ? "text-violet-600" : "text-foreground-muted"} />
+                <Icon size={14} className={isActive ? "text-cyan-400" : "text-foreground-muted"} />
                 <span>{meta.label}</span>
               </button>
             );
@@ -238,12 +238,12 @@ export default function Skills() {
                         whileHover={{ y: -3 }}
                         className={`group rounded-full px-3.5 py-2 text-xs font-medium transition flex items-center gap-2 cursor-default ${
                           isCore
-                            ? "border border-violet-400/40 bg-violet-500/15 text-violet-200 shadow-sm shadow-violet-500/10 hover:border-violet-400/80 hover:bg-violet-500/25 hover:text-foreground-primary"
+                            ? "border border-cyan-400/40 bg-cyan-500/15 text-cyan-200 shadow-sm shadow-cyan-500/10 hover:border-cyan-400/80 hover:bg-cyan-500/25 hover:text-foreground-primary"
                             : "border border-border-subtle bg-foreground-primary/[0.04] text-foreground-secondary hover:border-border-subtle hover:bg-foreground-primary/[0.08] hover:text-foreground-primary"
                         }`}
                       >
                         {icon && icon}
-                        {!icon && isCore && <span className="h-1.5 w-1.5 rounded-full bg-violet-400 animate-pulse" />}
+                        {!icon && isCore && <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse" />}
                         <span>{skill}</span>
                       </motion.span>
                     );

@@ -5,11 +5,11 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/cn";
 
 const nodes = [
-  { id: "frontend", label: "Frontend", angle: 0, radius: 140, color: "text-blue-400" },
-  { id: "backend", label: "Backend", angle: 72, radius: 140, color: "text-green-400" },
-  { id: "mobile", label: "Mobile", angle: 144, radius: 140, color: "text-purple-400" },
+  { id: "frontend", label: "Frontend", angle: 0, radius: 140, color: "text-cyan-400" },
+  { id: "backend", label: "Backend", angle: 72, radius: 140, color: "text-emerald-400" },
+  { id: "mobile", label: "Mobile", angle: 144, radius: 140, color: "text-violet-400" },
   { id: "database", label: "Database", angle: 216, radius: 140, color: "text-amber-400" },
-  { id: "api", label: "API", angle: 288, radius: 140, color: "text-pink-400" },
+  { id: "api", label: "API", angle: 288, radius: 140, color: "text-cyan-300" },
 ];
 
 export function SystemOrbit() {
@@ -38,9 +38,6 @@ export function SystemOrbit() {
           className="absolute inset-0 rounded-full border border-border-subtle"
         >
           {nodes.map((node) => {
-            const x = Math.cos((node.angle * Math.PI) / 180) * 100 + "%";
-            const y = Math.sin((node.angle * Math.PI) / 180) * 100 + "%";
-            
             return (
               <div 
                 key={node.id} 
@@ -100,8 +97,8 @@ export function SystemOrbit() {
         </motion.div>
 
         {/* Core Node */}
-        <div className="absolute left-1/2 top-1/2 z-20 h-16 w-16 md:h-20 md:w-20 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-primary flex items-center justify-center shadow-[0_0_30px_rgba(var(--accent-primary),0.4)] [transform:translateZ(40px)_rotateX(-60deg)]">
-          <span className="text-foreground-primary font-bold text-lg md:text-xl">SK</span>
+        <div className="absolute left-1/2 top-1/2 z-20 h-16 w-16 md:h-20 md:w-20 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-primary flex items-center justify-center shadow-[0_0_30px_rgba(6,182,212,0.45)] [transform:translateZ(40px)_rotateX(-60deg)]">
+          <span className="text-black font-bold text-lg md:text-xl">SK</span>
         </div>
 
       </motion.div>

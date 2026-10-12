@@ -1,50 +1,63 @@
 import { experience } from "@/data/portfolio";
 import { Reveal } from "../ui/Reveal";
-import { Tag } from "../ui/Tag";
 
 export function Experience() {
   return (
-    <section id="experience" className="py-24 bg-background-primary scroll-mt-12">
+    <section id="experience" className="py-24 scroll-mt-12">
       <div className="container-x">
         <Reveal>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-foreground-primary mb-16">
-            Experience
-          </h2>
+          <div className="mb-14">
+            <span className="text-[11px] font-mono uppercase tracking-widest text-cyan-400 font-semibold flex items-center gap-1.5 mb-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+              03 / Proven Track Record
+            </span>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
+              Work Experience
+            </h2>
+          </div>
         </Reveal>
 
-        <div className="relative border-l border-border-subtle ml-3 md:ml-6 pl-8 md:pl-12 space-y-16">
+        <div className="relative pl-6 md:pl-8 space-y-10 before:content-[''] before:absolute before:left-2 before:top-2 before:bottom-2 before:w-[1px] before:bg-gradient-to-b before:from-cyan-400 before:via-violet-500 before:to-zinc-800">
           {experience.map((exp, i) => (
             <div key={i} className="relative group">
-              {/* Timeline Dot */}
-              <div className="absolute -left-[37px] md:-left-[53px] top-1.5 w-4 h-4 rounded-full border-2 border-background-primary bg-accent-primary shadow-[0_0_0_2px_var(--border-subtle)] group-hover:shadow-[0_0_0_4px_var(--accent-primary)] transition-shadow duration-300" />
+              {/* Timeline Neon Node from Ref/index.html */}
+              <span className={`absolute -left-[20px] md:-left-[28px] top-1.5 w-3 h-3 rounded-full ring-4 ring-black transition-all ${
+                i === 0 
+                  ? "bg-cyan-400 shadow-[0_0_12px_rgba(6,182,212,0.8)]" 
+                  : "bg-zinc-600 group-hover:bg-cyan-400 group-hover:shadow-[0_0_10px_rgba(6,182,212,0.6)]"
+              }`} />
               
-              <Reveal delay={i * 0.1}>
-                <div className="flex flex-col md:flex-row md:items-baseline md:justify-between mb-2">
-                  <h3 className="text-xl md:text-2xl font-semibold text-foreground-primary">
+              <Reveal delay={i * 0.08}>
+                <div className="p-6 rounded-2xl hairline-border card-3d-tilt">
+                  <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-2">
+                    <span className="text-[11px] font-mono text-cyan-300 font-semibold tracking-wide">
+                      {exp.period}
+                    </span>
+                    <span className="text-xs font-semibold text-zinc-400">
+                      {exp.company}
+                    </span>
+                  </div>
+                  
+                  <h3 className="text-lg md:text-xl font-bold text-white group-hover:text-cyan-300 transition-colors mb-3">
                     {exp.role}
                   </h3>
-                  <span className="text-sm font-medium text-accent-primary mt-1 md:mt-0 font-mono tracking-tight">
-                    {exp.period}
-                  </span>
-                </div>
-                
-                <h4 className="text-base font-medium text-foreground-secondary mb-4 flex items-center gap-2">
-                  {exp.company}
-                </h4>
-                
-                <ul className="space-y-3 mb-6">
-                  {exp.bullets.map((bullet, j) => (
-                    <li key={j} className="text-sm md:text-base text-foreground-secondary leading-relaxed flex gap-3">
-                      <span className="text-accent-primary opacity-50 mt-1">▹</span>
-                      <span>{bullet}</span>
-                    </li>
-                  ))}
-                </ul>
+                  
+                  <ul className="space-y-2.5 mb-5">
+                    {exp.bullets.map((bullet, j) => (
+                      <li key={j} className="text-xs sm:text-sm text-zinc-400 leading-relaxed flex gap-2.5">
+                        <span className="text-cyan-400 opacity-70 mt-0.5">▹</span>
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
 
-                <div className="flex flex-wrap gap-2">
-                  {exp.tags.map((tech) => (
-                    <Tag key={tech}>{tech}</Tag>
-                  ))}
+                  <div className="flex flex-wrap gap-1.5 pt-3 border-t border-white/5">
+                    {exp.tags.map((tech) => (
+                      <span key={tech} className="tag-neon px-2.5 py-1 rounded-full bg-black/60 border border-cyan-500/20 text-[11px] text-zinc-300 font-mono">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </Reveal>
             </div>

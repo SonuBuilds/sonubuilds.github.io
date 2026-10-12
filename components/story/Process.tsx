@@ -9,34 +9,35 @@ const processData = [
 
 export function Process() {
   return (
-    <section className="py-24 bg-background-primary border-b border-border-subtle">
+    <section className="py-24 border-b border-white/5">
       <div className="container-x">
         <Reveal>
-          <div className="mb-16 text-center">
-            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-foreground-primary mb-4">
-              My Approach
+          <div className="mb-14 text-center">
+            <span className="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-widest text-cyan-400 font-semibold mb-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+              06 / Engineering Methodology
+            </span>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-3">
+              How I Deliver
             </h2>
-            <p className="text-lg text-foreground-secondary max-w-2xl mx-auto">
-              A structured methodology to guarantee quality and transparency.
+            <p className="text-sm md:text-base text-zinc-400 max-w-xl mx-auto">
+              A structured methodology to guarantee architectural quality, speed, and transparency.
             </p>
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {processData.map((step, i) => (
-            <Reveal key={i} delay={i * 0.1} width="100%">
-              <div className="relative p-6 md:p-8 rounded-2xl bg-background-secondary border border-border-subtle h-full overflow-hidden group hover:border-accent-primary/40 transition-colors">
-                <div className="absolute top-0 right-0 -mr-4 -mt-4 text-9xl font-bold text-foreground-muted opacity-[0.03] group-hover:opacity-[0.06] transition-opacity select-none pointer-events-none">
-                  {i + 1}
-                </div>
+            <Reveal key={i} delay={i * 0.08} width="100%">
+              <div className="p-6 md:p-8 rounded-2xl hairline-border card-3d-tilt h-full flex flex-col justify-between hover:border-cyan-500/40 relative overflow-hidden group">
                 <div className="relative z-10">
-                  <div className="text-sm font-bold uppercase tracking-widest text-accent-primary mb-4">
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/60 border border-cyan-500/25 text-[11px] font-mono text-cyan-300 mb-4">
                     Phase 0{i + 1}
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground-primary mb-3">
+                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
                     {step.title}
                   </h3>
-                  <p className="text-sm text-foreground-secondary leading-relaxed">
+                  <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
                     {step.description}
                   </p>
                 </div>

@@ -2,10 +2,8 @@ import { clients } from "@/data/portfolio";
 import { SmartImage } from "../ui/SmartImage";
 
 export function ClientStrip() {
-  const marqueeItems = [...clients, ...clients];
-
   return (
-    <section className="group border-y border-border-subtle bg-background-secondary py-8 overflow-hidden flex">
+    <section className="group border-y border-white/10 bg-zinc-950/40 backdrop-blur-md py-8 overflow-hidden flex">
       <div className="flex shrink-0 animate-marquee gap-16 md:gap-24 px-8 min-w-full items-center justify-around">
         {clients.map((client, i) => (
           <div key={`client-1-${i}`} className="flex items-center justify-center shrink-0 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 hover:scale-105">

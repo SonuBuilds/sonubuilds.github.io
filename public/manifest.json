@@ -4,8 +4,8 @@
   "description": "Portfolio of Sonu Kumar — Full-Stack Developer",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#050508",
-  "theme_color": "#050508",
+  "background_color": "#050505",
+  "theme_color": "#050505",
   "icons": [
     {
       "src": "/apple-icon.png",

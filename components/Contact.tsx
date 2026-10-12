@@ -98,10 +98,10 @@ export default function Contact() {
   return (
     <section id="contact" className="section-pad">
       <div className="container-x">
-        <div className="relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] border border-border-subtle bg-[#0b0b0b] p-5 sm:p-10 lg:p-14 shadow-2xl">
+        <div className="relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] border border-cyan-400/25 bg-[#0b0f17]/95 p-5 sm:p-10 lg:p-14 shadow-[0_0_50px_rgba(0,245,212,0.12)]">
           {/* Ambient light glow */}
-          <div className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-violet-600/15 blur-3xl" />
-          <div className="pointer-events-none absolute -left-24 -bottom-24 h-96 w-96 rounded-full bg-cyan-600/10 blur-3xl" />
+          <div className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-cyan-500/15 blur-3xl" />
+          <div className="pointer-events-none absolute -left-24 -bottom-24 h-96 w-96 rounded-full bg-purple-600/10 blur-3xl" />
 
           <div className="relative grid gap-8 sm:gap-12 lg:grid-cols-[1.1fr_1fr]">
             {/* LEFT COLUMN: Overview & Quick Actions */}
@@ -113,7 +113,7 @@ export default function Contact() {
                 transition={{ duration: 0.6 }}
               >
                 <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                  <span className="text-xs uppercase tracking-[.24em] text-violet-300 font-semibold">
+                  <span className="text-xs uppercase tracking-[.24em] text-cyan-400 font-semibold">
                     07 / Contact
                   </span>
                   <span className="h-1 w-1 rounded-full bg-zinc-600" />
@@ -207,7 +207,7 @@ export default function Contact() {
               <div className="mt-8 sm:mt-10 rounded-2xl border border-border-subtle bg-background-secondary/40 p-4 sm:p-5 text-xs text-foreground-muted">
                 <div className="grid gap-2.5 sm:gap-3 sm:grid-cols-2">
                   <div className="flex items-center gap-2.5">
-                    <MapPin size={15} className="text-violet-400 shrink-0" />
+                    <MapPin size={15} className="text-cyan-400 shrink-0" />
                     <span>Based in {profile.location} (UTC +5:30)</span>
                   </div>
                   <div className="flex items-center gap-2.5">
@@ -229,7 +229,7 @@ export default function Contact() {
                     Direct inquiry or role invitation
                   </p>
                 </div>
-                <div className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full border border-violet-500/30 bg-violet-500/10 text-violet-300">
+                <div className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-300">
                   <Sparkles size={16} />
                 </div>
               </div>
@@ -268,7 +268,7 @@ export default function Contact() {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="e.g. Jane Doe"
-                      className="w-full rounded-xl border border-white/15 bg-foreground-primary/[0.04] px-4 py-2.5 text-xs text-foreground-primary placeholder-zinc-500 outline-none transition focus:border-violet-500 focus:bg-foreground-primary/[0.08]"
+                      className="w-full rounded-xl border border-white/15 bg-foreground-primary/[0.04] px-4 py-2.5 text-xs text-foreground-primary placeholder-zinc-500 outline-none transition focus:border-cyan-500 focus:bg-foreground-primary/[0.08]"
                     />
                   </div>
 
@@ -282,7 +282,7 @@ export default function Contact() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="e.g. jane@company.com"
-                      className="w-full rounded-xl border border-white/15 bg-foreground-primary/[0.04] px-4 py-2.5 text-xs text-foreground-primary placeholder-zinc-500 outline-none transition focus:border-violet-500 focus:bg-foreground-primary/[0.08]"
+                      className="w-full rounded-xl border border-white/15 bg-foreground-primary/[0.04] px-4 py-2.5 text-xs text-foreground-primary placeholder-zinc-500 outline-none transition focus:border-cyan-500 focus:bg-foreground-primary/[0.08]"
                     />
                   </div>
 
@@ -294,7 +294,7 @@ export default function Contact() {
                       id="contact-category"
                       value={category}
                       onChange={(e) => setCategory(e.target.value)}
-                      className="w-full rounded-xl border border-white/15 bg-[#121216] px-4 py-2.5 text-xs text-foreground-primary outline-none transition focus:border-violet-500"
+                      className="w-full rounded-xl border border-white/15 bg-[#0d0e15] px-4 py-2.5 text-xs text-foreground-primary outline-none transition focus:border-cyan-500"
                     >
                       <option value="Full-Time Engineering Role">Full-Time Engineering Role</option>
                       <option value="Contract / Freelance Project">Contract / Freelance Project</option>
@@ -313,7 +313,7 @@ export default function Contact() {
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       placeholder="Tell me about your team, tech stack, timeline, or requirements..."
-                      className="w-full rounded-xl border border-white/15 bg-foreground-primary/[0.04] px-4 py-2.5 text-xs text-foreground-primary placeholder-zinc-500 outline-none transition focus:border-violet-500 focus:bg-foreground-primary/[0.08] resize-none"
+                      className="w-full rounded-xl border border-white/15 bg-foreground-primary/[0.04] px-4 py-2.5 text-xs text-foreground-primary placeholder-zinc-500 outline-none transition focus:border-cyan-500 focus:bg-foreground-primary/[0.08] resize-none"
                     />
                   </div>
 
@@ -324,7 +324,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="flex w-full items-center justify-center gap-2 rounded-xl bg-violet-600 px-5 py-3 text-xs font-bold text-foreground-primary transition hover:bg-violet-500 disabled:bg-violet-600/50 disabled:cursor-not-allowed shadow-lg shadow-violet-600/30 cursor-pointer"
+                    className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-300 hover:from-white hover:to-cyan-200 px-5 py-3 text-xs font-bold text-zinc-950 transition hover:opacity-95 disabled:opacity-50 shadow-[0_0_25px_rgba(0,245,212,0.35)] cursor-pointer shimmer-action active:scale-95"
                   >
                     <Send size={14} />
                     <span>{isSubmitting ? "Sending..." : "Send Message to Sonu"}</span>

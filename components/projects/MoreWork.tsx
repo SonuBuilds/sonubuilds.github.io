@@ -7,7 +7,7 @@ export function MoreWork() {
   if (archive.length === 0) return null;
 
   return (
-    <section className="py-24 bg-background-secondary border-t border-border-subtle">
+    <section className="py-24 border-t border-white/10">
       <div className="container-x">
         <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-foreground-primary mb-12">
           More Projects

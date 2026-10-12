@@ -4,39 +4,27 @@ import { ArrowUpRight, ArrowDown } from "lucide-react";
 import { profile } from "@/data/portfolio";
 import Link from "next/link";
 
-import { MagneticButton } from "../ui/MagneticButton";
 import { SplitText } from "../ui/SplitText";
 import { Reveal } from "../ui/Reveal";
 import { HeroProfile } from "./HeroProfile";
 
 export function Hero() {
   return (
-    <section id="top" className="relative min-h-[100dvh] pt-24 pb-16 overflow-hidden flex items-center">
-      {/* Background patterns */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-accent-primary/10 via-background-primary to-background-primary pointer-events-none" />
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMTUwLCAxNTAsIDE1MCwgMC4xKSIvPjwvc3ZnPg==')] pointer-events-none opacity-50" />
-
+    <section id="top" className="relative min-h-[100dvh] pt-24 pb-16 flex items-center">
       <div className="container-x relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           
           <div className="flex flex-col max-w-3xl">
             <Reveal delay={0.1}>
-              <div className="flex items-center gap-2.5 text-[10px] sm:text-[11px] font-bold text-foreground-primary uppercase tracking-[0.15em] mb-6">
-                <span className="relative flex h-1.5 w-1.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-900/90 hairline-border mb-6 animate-float border-cyan-400/40 shadow-[0_0_20px_rgba(0,245,212,0.22)]">
+                <span className="w-2 h-2 rounded-full bg-cyan-400 shadow-glow-cyan animate-pulse" />
+                <span className="text-[11px] uppercase tracking-wider font-semibold text-zinc-200 font-mono">
+                  Full-Stack · React · React Native · AI
                 </span>
-                AVAILABLE FOR OPPORTUNITIES <span className="text-foreground-muted">·</span> DELHI, INDIA
               </div>
             </Reveal>
 
-            <Reveal delay={0.2}>
-              <h2 className="text-[10px] sm:text-[11px] font-bold tracking-[0.25em] text-accent-primary uppercase mb-5">
-                Full-Stack Developer · Web · Mobile · AI
-              </h2>
-            </Reveal>
-
-            <h1 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[5.5rem] font-semibold leading-[1.08] tracking-tight text-foreground-primary mb-6 max-w-[850px] [text-wrap:balance] lg:[text-wrap:auto]">
+            <h1 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[5.2rem] font-semibold leading-[1.08] tracking-tight text-foreground-primary mb-6 max-w-[850px] [text-wrap:balance] lg:[text-wrap:auto]">
               <SplitText text="I build digital" delayOffset={3} />
               <br className="hidden lg:block" />
               <span className="lg:hidden"> </span>
@@ -46,30 +34,48 @@ export function Hero() {
               <SplitText text="as good as they" delayOffset={5} />
               <br className="hidden lg:block" />
               <span className="lg:hidden"> </span>
-              <span className="text-foreground-muted italic pr-2">
+              <span className="bg-gradient-to-r from-cyan-300 via-teal-200 to-fuchsia-400 bg-clip-text text-transparent italic font-serif shimmer-text-glow animate-pulse pr-2">
                 <SplitText text="perform." delayOffset={6} />
               </span>
             </h1>
 
             <Reveal delay={0.65}>
-              <p className="text-sm md:text-base text-foreground-secondary/90 leading-relaxed max-w-[420px] mb-10 font-medium [text-wrap:balance]">
+              <p className="text-sm md:text-base text-zinc-400 leading-relaxed max-w-[460px] mb-6 font-normal [text-wrap:balance]">
                 {profile.subline}
               </p>
             </Reveal>
 
+            {/* Key Metrics Ribbon with Glowing Gradient Borders from Stitch Obsidian Void */}
+            <Reveal delay={0.7}>
+              <div className="w-full max-w-lg grid grid-cols-3 gap-2.5 p-3.5 rounded-2xl bg-zinc-900/70 hairline-border mb-8 border-white/10 shadow-glass backdrop-blur-xl">
+                <div className="text-center p-2.5 rounded-xl bg-gradient-to-b from-cyan-500/15 via-cyan-950/20 to-transparent border border-cyan-400/35 shadow-[0_0_20px_rgba(0,245,212,0.22)] backdrop-blur-md">
+                  <div className="text-base font-bold text-white tracking-tight drop-shadow-[0_0_8px_rgba(0,245,212,0.6)]">5+ Yrs</div>
+                  <div className="text-[10px] text-zinc-400 uppercase tracking-wider font-mono">Experience</div>
+                </div>
+                <div className="text-center p-2.5 rounded-xl bg-gradient-to-b from-teal-500/15 via-teal-950/20 to-transparent border border-teal-400/35 shadow-[0_0_20px_rgba(6,182,212,0.24)] backdrop-blur-md">
+                  <div className="text-base font-bold text-cyan-300 tracking-tight drop-shadow-[0_0_10px_rgba(6,182,212,0.7)]">30%</div>
+                  <div className="text-[10px] text-zinc-400 uppercase tracking-wider font-mono">Load Speed ↑</div>
+                </div>
+                <div className="text-center p-2.5 rounded-xl bg-gradient-to-b from-purple-500/15 via-purple-950/20 to-transparent border border-purple-400/35 shadow-[0_0_20px_rgba(168,85,247,0.24)] backdrop-blur-md">
+                  <div className="text-base font-bold text-violet-300 tracking-tight drop-shadow-[0_0_10px_rgba(168,85,247,0.7)]">10k+</div>
+                  <div className="text-[10px] text-zinc-400 uppercase tracking-wider font-mono">Schools</div>
+                </div>
+              </div>
+            </Reveal>
+
             <Reveal delay={0.75}>
-              <div className="flex flex-wrap items-center gap-4">
+              <div className="flex flex-wrap items-center gap-3">
                 <Link href="/#work" className="block">
-                  <MagneticButton className="rounded-full bg-foreground-primary shadow-2xl shadow-foreground-primary/10 hover:scale-[1.02] transition-transform px-7 py-3.5 flex items-center gap-2.5 text-sm font-semibold text-background-primary group">
-                    View my work
-                    <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </MagneticButton>
+                  <button className="py-3.5 px-6 rounded-xl bg-gradient-to-r from-cyan-400 via-teal-300 to-violet-400 hover:from-white hover:to-cyan-300 text-zinc-950 font-extrabold text-xs sm:text-sm tracking-wide shadow-[0_0_28px_rgba(0,245,212,0.4)] active:scale-95 transition-all shimmer-action flex items-center gap-2 cursor-pointer">
+                    <span>View Selected Work</span>
+                    <span className="text-xs">↓</span>
+                  </button>
                 </Link>
                 <Link href="/#contact" className="block">
-                  <MagneticButton className="rounded-full border border-border-subtle bg-background-secondary/40 backdrop-blur-md hover:bg-background-secondary hover:border-border-muted transition-colors px-7 py-3.5 flex items-center gap-2.5 text-sm font-medium text-foreground-primary group">
-                    Let&apos;s work together
-                    <ArrowUpRight size={16} className="opacity-70 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </MagneticButton>
+                  <button className="py-3.5 px-6 rounded-xl bg-zinc-900/90 hover:bg-zinc-800 text-zinc-200 border border-zinc-700/70 hover:border-cyan-400/60 font-semibold text-xs sm:text-sm active:scale-95 transition-all shadow-glass hover:shadow-[0_0_20px_rgba(0,245,212,0.2)] flex items-center gap-2 cursor-pointer">
+                    <span>Let&apos;s Connect</span>
+                    <ArrowUpRight size={15} />
+                  </button>
                 </Link>
               </div>
             </Reveal>

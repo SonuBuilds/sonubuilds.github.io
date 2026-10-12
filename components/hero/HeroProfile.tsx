@@ -86,7 +86,7 @@ export function HeroProfile() {
         {/* Subtle orbit/dot */}
         <div className="absolute top-[45%] left-[8%] flex items-center justify-center">
           <div className="w-[1px] h-12 bg-gradient-to-b from-transparent via-foreground-muted/20 to-transparent absolute" />
-          <div className="w-1.5 h-1.5 rounded-full bg-accent-primary/50 shadow-[0_0_10px_rgba(124,92,255,0.4)]" />
+          <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(0,245,212,0.5)]" />
         </div>
 
         {/* Minimal geometric lines */}
@@ -111,13 +111,23 @@ export function HeroProfile() {
             alt={profile.name}
             className="w-full h-full object-contain object-bottom"
             style={{
-              filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.3)) drop-shadow(0 0 20px rgba(124,92,255,0.15))",
+              filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.5)) drop-shadow(0 0 25px rgba(0,245,212,0.25))",
               WebkitMaskImage: "linear-gradient(to bottom, black 80%, transparent 100%)",
               maskImage: "linear-gradient(to bottom, black 80%, transparent 100%)"
             }}
           />
         </div>
       </motion.div>
+
+      {/* Cyber HUD Overlays from Ref/stitch_sonu_kumar_portfolio_modernization */}
+      <div className="absolute top-2 left-2 z-20 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-cyan-400/40 text-[10px] font-mono text-cyan-300 shadow-[0_0_15px_rgba(0,245,212,0.35)] pointer-events-none">
+        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(0,245,212,0.9)] animate-pulse" />
+        <span>3D ECOSYSTEM ACTIVE</span>
+      </div>
+
+      <div className="absolute bottom-2 right-2 z-20 px-2.5 py-1 rounded bg-black/70 backdrop-blur-md border border-violet-500/40 text-[9px] font-mono text-violet-300 shadow-[0_0_12px_rgba(168,85,247,0.3)] pointer-events-none">
+        <span>WebGL 2.0 · 60FPS · Lerp Physics</span>
+      </div>
 
     </div>
   );

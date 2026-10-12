@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function Experience() {
   return (
-    <section id="experience" className="section-pad border-y border-border-subtle bg-[#070707]">
+    <section id="experience" className="section-pad border-y border-border-subtle bg-[#050505]">
       <div className="container-x">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -15,7 +15,7 @@ export default function Experience() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
         >
-          <p className="mb-2 sm:mb-3 text-xs uppercase tracking-[.24em] text-violet-300 font-semibold">
+          <p className="mb-2 sm:mb-3 text-xs uppercase tracking-[.24em] text-cyan-400 font-semibold">
             04 / Experience
           </p>
           <h2 className="mb-8 sm:mb-14 max-w-3xl text-3xl font-semibold tracking-tight sm:text-5xl lg:text-6xl text-foreground-primary">
@@ -47,7 +47,7 @@ export default function Experience() {
                   className="relative pl-[60px] sm:pl-[80px]"
                 >
                   {/* Timeline Avatar / Logo */}
-                  <div className="absolute left-0 top-0 h-[40px] w-[40px] sm:h-[48px] sm:w-[48px] rounded-full bg-background-secondary border-2 border-[#1a1a1a] flex items-center justify-center overflow-hidden z-10 p-1.5 ring-4 ring-[#070707]">
+                  <div className="absolute left-0 top-0 h-[40px] w-[40px] sm:h-[48px] sm:w-[48px] rounded-full bg-background-secondary border-2 border-border-subtle flex items-center justify-center overflow-hidden z-10 p-1.5 ring-4 ring-[#050505]">
                     {item.logo ? (
                       <Image src={item.logo} alt={item.company} width={32} height={32} className="object-contain" />
                     ) : (
@@ -59,7 +59,7 @@ export default function Experience() {
                     {/* Period & Location */}
                     <div className="pt-1 sm:pt-2">
                       <div className="flex items-center gap-1.5 text-xs font-semibold text-foreground-muted uppercase tracking-wider">
-                        <Calendar size={13} className="text-violet-400 shrink-0" />
+                        <Calendar size={13} className="text-cyan-400 shrink-0" />
                         <span>{item.period}</span>
                       </div>
                       <div className="mt-2 flex items-center gap-1.5 text-xs text-foreground-muted">
@@ -78,11 +78,11 @@ export default function Experience() {
                     <div className="rounded-[1.5rem] border border-border-subtle bg-foreground-primary/[0.02] p-5 sm:p-7 lg:p-8 backdrop-blur-sm shadow-xl transition hover:bg-foreground-primary/[0.03]">
                       <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                         {item.url ? (
-                           <a href={item.url} target="_blank" rel="noreferrer" className="group flex items-center gap-2 hover:text-violet-300 transition-colors">
-                              <h3 className="text-xl sm:text-2xl font-bold text-foreground-primary tracking-tight group-hover:text-violet-300 transition-colors">
+                           <a href={item.url} target="_blank" rel="noreferrer" className="group flex items-center gap-2 hover:text-cyan-300 transition-colors">
+                              <h3 className="text-xl sm:text-2xl font-bold text-foreground-primary tracking-tight group-hover:text-cyan-300 transition-colors">
                                 {item.company}
                               </h3>
-                              <ArrowUpRight size={16} className="text-foreground-muted/80 group-hover:text-violet-300 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                              <ArrowUpRight size={16} className="text-foreground-muted/80 group-hover:text-cyan-300 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                            </a>
                         ) : (
                            <h3 className="text-xl sm:text-2xl font-bold text-foreground-primary tracking-tight">
@@ -94,14 +94,14 @@ export default function Experience() {
                         </span>
                       </div>
 
-                      <div className="mb-5 text-sm sm:text-base font-semibold text-violet-300/90">
+                      <div className="mb-5 text-sm sm:text-base font-semibold text-cyan-300/90">
                         {item.role}
                       </div>
 
                       <ul className="space-y-2.5 sm:space-y-3 text-sm leading-relaxed text-foreground-secondary">
                         {item.bullets.map((b) => (
                           <li key={b} className="flex items-start gap-3">
-                            <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-violet-400/60" />
+                            <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400/60" />
                             <span>{b}</span>
                           </li>
                         ))}
